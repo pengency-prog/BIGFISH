@@ -1,0 +1,54 @@
+.section {
+  padding: 8rem 0;
+  background-color: var(--primary);
+  overflow: hidden;
+  color: var(--black);
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.carouselWrapper {
+  width: 100%;
+  display: flex;
+}
+
+.carousel {
+  display: flex;
+  gap: 4rem;
+  animation: scroll 40s linear infinite;
+  padding: 2rem 0;
+}
+
+.logoItem {
+  flex: 0 0 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(1) brightness(2) contrast(1.5);
+  transition: all 0.3s ease;
+}
+
+.logoItem:hover {
+  filter: none;
+}
+
+.logoItem img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
