@@ -37,6 +37,7 @@ export default function LogoCarousel() {
                   width={200}
                   height={100}
                   style={{ objectFit: 'contain' }}
+                  unoptimized={true}
                 />
               </div>
             </div>

@@ -36,6 +36,15 @@
   filter: none;
 }
 
+.logoWrapper {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logoItem img {
   max-width: 100%;
   height: auto;
