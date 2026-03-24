@@ -1,0 +1,11 @@
+﻿
+> site@0.1.0 lint
+> eslint
+
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\clients\FrenchApp\page-content.jsx
+  202:6  warning  React Hook useEffect has a missing dependency: 'validateSpeech'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  307:9  warning  'handleNextModule' is assigned a value but never used                                                              @typescript-eslint/no-unused-vars
+
+Γ£û 2 problems (0 errors, 2 warnings)
+

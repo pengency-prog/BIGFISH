@@ -1,6 +1,5 @@
-'use client';
-
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './SuccessStories.module.css';
 
 const stories = [
@@ -41,7 +40,12 @@ export default function SuccessStories() {
           {stories.map((story, index) => (
             <Link href={story.link} key={index} className={styles.card}>
               <div className={styles.imageWrapper}>
-                <img src={story.image} alt={story.title} />
+                <Image 
+                  src={story.image} 
+                  alt={story.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
                 <div className={styles.overlay}></div>
               </div>
               <div className={styles.content}>

@@ -1,10 +1,9 @@
-'use client';
-
+import Image from 'next/image';
 import styles from './LogoCarousel.module.css';
 
 const logos = [
   { name: 'Kinso', src: '/images/logos/Kinso.jpg' },
-  { name: 'Whisper Flow', src: '/images/logos/Whisper Flow.png' },
+  { name: 'Whisper Flow', src: '/images/logos/whisper-flow.png' },
   { name: 'Penegncy', src: '/images/logos/Penegncy.png' },
   { name: 'KORREY', src: '/images/logos/KORREY.webp' },
   { name: 'Interface', src: 'https://www.bigfork.co.uk/assets/Uploads/Logos/interface-v2__ScaleWidthWzIwMF0.png' },
@@ -31,7 +30,15 @@ export default function LogoCarousel() {
           {/* Double the logos for seamless scrolling */}
           {[...logos, ...logos].map((logo, index) => (
             <div key={index} className={styles.logoItem}>
-              <img src={logo.src} alt={logo.name} />
+              <div className={styles.logoWrapper}>
+                <Image 
+                  src={logo.src} 
+                  alt={logo.name}
+                  width={200}
+                  height={100}
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
             </div>
           ))}
         </div>

@@ -5,7 +5,9 @@ import styles from './CalendlyButton.module.css';
 
 declare global {
   interface Window {
-    Calendly: any;
+    Calendly: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
   }
 }
 

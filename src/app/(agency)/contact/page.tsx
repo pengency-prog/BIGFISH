@@ -3,7 +3,7 @@ import CalendlyButton from "@/components/CalendlyButton";
 
 export default function ContactPage() {
   const heroTitle = ["GET", "IN", "TOUCH"];
-  const heroSubtitle = ["Let's", "talk", "about", "your", "growth"];
+  const heroSubtitle = ["Let&apos;s", "talk", "about", "your", "growth"];
 
   return (
     <main>
@@ -15,7 +15,7 @@ export default function ContactPage() {
             <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>Start Your Journey</h2>
             <p style={{ fontSize: '1.2rem', opacity: 0.8, marginBottom: '3rem' }}>
               Whether you need a complete website refresh or want to optimize your current site, 
-              we're here to help you achieve big results.
+              we&apos;re here to help you achieve big results.
             </p>
             
             <div style={{ marginBottom: '3rem' }}>

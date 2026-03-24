@@ -1,0 +1,94 @@
+﻿
+> site@0.1.0 lint
+> eslint
+
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\app\(agency)\[...slug]\page.tsx
+  82:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\app\(agency)\about-us\page.tsx
+  38:49  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\app\(agency)\contact\page.tsx
+  18:17  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\CalendlyButton.tsx
+  8:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\Hero.tsx
+  39:9   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @next/next/no-img-element
+  49:12  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\Hero.tsx:49:12
+  47 |         {/* Text Layer (Contains two clipped versions of the same text) */}
+  48 |         <div className={styles.textLayer}>
+> 49 |           <HeroContent styleClass={styles.textBlack} />
+     |            ^^^^^^^^^^^ This component is created during render
+  50 |           <HeroContent styleClass={styles.textWhite} />
+  51 |         </div>
+  52 |       </div>
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\Hero.tsx:14:23
+  12 |   const scrollRef = useRef<HTMLDivElement>(null);
+  13 |
+> 14 |   const HeroContent = ({ styleClass }: { styleClass: string }) => (
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |     <div className={`${styles.textHalf} ${styleClass}`}>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 16 |       <div className={`${styles.innerContent} container`}>
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |   );
+     | ^^^^ The component is created during render here
+  34 |
+  35 |   return (
+  36 |     <section className={styles.hero}>  react-hooks/static-components
+  50:12  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\Hero.tsx:50:12
+  48 |         <div className={styles.textLayer}>
+  49 |           <HeroContent styleClass={styles.textBlack} />
+> 50 |           <HeroContent styleClass={styles.textWhite} />
+     |            ^^^^^^^^^^^ This component is created during render
+  51 |         </div>
+  52 |       </div>
+  53 |
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\Hero.tsx:14:23
+  12 |   const scrollRef = useRef<HTMLDivElement>(null);
+  13 |
+> 14 |   const HeroContent = ({ styleClass }: { styleClass: string }) => (
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |     <div className={`${styles.textHalf} ${styleClass}`}>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 16 |       <div className={`${styles.innerContent} container`}>
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |   );
+     | ^^^^ The component is created during render here
+  34 |
+  35 |   return (
+  36 |     <section className={styles.hero}>                                                                              react-hooks/static-components
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\LogoCarousel.tsx
+  34:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\SuccessStories.tsx
+  44:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\HP\Documents\BigFish By Peno\site\src\components\clients\FrenchApp\page-content.jsx
+  202:6   warning  React Hook useEffect has a missing dependency: 'validateSpeech'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  307:9   warning  'handleNextModule' is assigned a value but never used                                                              @typescript-eslint/no-unused-vars
+  497:22  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                    react/no-unescaped-entities
+  497:35  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                    react/no-unescaped-entities
+
+Γ£û 13 problems (7 errors, 6 warnings)
+

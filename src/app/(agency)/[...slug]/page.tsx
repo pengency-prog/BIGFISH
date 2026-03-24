@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import CalendlyButton from "@/components/CalendlyButton";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface PageProps {
@@ -11,7 +12,12 @@ export default async function CatchAllPage({ params }: PageProps) {
   const path = slug.join("/");
 
   // Simple mapping for common pages
-  const pageData: Record<string, { title: string[]; subtitle: string[] }> = {
+  const pageData: Record<string, { 
+    title: string[]; 
+    subtitle: string[]; 
+    image?: string;
+    description?: string;
+  }> = {
     "b2b-website-design": {
       title: ["B2B", "WEBSITE", "DESIGN"],
       subtitle: ["Websites", "that", "work", "as", "hard", "as", "you", "do"],
@@ -28,12 +34,30 @@ export default async function CatchAllPage({ params }: PageProps) {
       title: ["OIL", "GAS", "AND", "ENERGY"],
       subtitle: ["Powering", "the", "energy", "sector's", "growth"],
     },
+    "work/tetris": {
+      title: ["TETRIS", "MOBILE", "APP"],
+      subtitle: ["98%", "User", "Retention", "through", "gamified", "excellence"],
+      image: "/images/stories/tetris_app.png",
+      description: "A comprehensive mobile experience designed for maximum engagement, achieving industry-leading retention rates.",
+    },
+    "work/wispr-flow": {
+      title: ["WISPR", "FLOW"],
+      subtitle: ["4x", "Faster", "Than", "Typing", "with", "AI", "dictation"],
+      image: "/images/stories/wispr_flow.png",
+      description: "The next generation of voice dictation, powered by advanced AI to streamline professional workflows.",
+    },
+    "work/quartix": {
+      title: ["QUARTIX"],
+      subtitle: ["300%", "increase", "in", "web", "conversions"],
+      image: "/images/stories/quartix_african_man.png",
+      description: "A conversion-led redesign for a global telematics leader, driving measurable growth in the UK and Nigeria.",
+    },
   };
 
-  const data = pageData[path];
+  const data: { title: string[]; subtitle: string[]; image?: string; description?: string } | undefined = pageData[path];
 
-  if (!data && !path.startsWith("specialisms")) {
-    // If not in our map and not a specialism, show 404
+  if (!data && !path.startsWith("specialisms") && !path.startsWith("work")) {
+    // If not in our map and not a specialism or work, show 404
     notFound();
   }
 
@@ -46,13 +70,24 @@ export default async function CatchAllPage({ params }: PageProps) {
       <Hero title={title} subtitle={subtitle} />
       
       <section className="container" style={{ padding: '8rem 2rem' }}>
-        <div style={{ maxWidth: '800px' }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>{title.join(" ")}</h2>
-          <p style={{ fontSize: '1.2rem', opacity: 0.8, marginBottom: '3rem' }}>
-            We specialize in building high-performance websites for {title.join(" ").toLowerCase()}. 
-            Our approach is built on data, design, and a deep understanding of B2B buyer behavior.
-          </p>
-          <CalendlyButton />
+        <div style={{ display: 'grid', gridTemplateColumns: data?.image ? '1fr 1fr' : '1fr', gap: '4rem', alignItems: 'center' }}>
+          <div>
+            <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>{title.join(" ")}</h2>
+            <p style={{ fontSize: '1.2rem', opacity: 0.8, marginBottom: '3rem' }}>
+              {data?.description || `We specialize in building high-performance websites for ${title.join(" ").toLowerCase()}. Your digital presence is the engine of your B2B growth.`}
+            </p>
+            <CalendlyButton />
+          </div>
+          {data?.image && (
+            <div style={{ borderRadius: '2rem', overflow: 'hidden', backgroundColor: 'var(--black)', position: 'relative', height: '400px' }}>
+              <Image 
+                src={data.image} 
+                alt={title.join(" ")} 
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          )}
         </div>
       </section>
 
